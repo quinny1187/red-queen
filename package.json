@@ -1,0 +1,26 @@
+{
+  "name": "red-queen-desktop",
+  "version": "1.0.0",
+  "description": "The Red Queen - Desktop Avatar",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": [
+    "avatar",
+    "desktop",
+    "3d",
+    "red-queen"
+  ],
+  "author": "The Red Queen",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0"
+  },
+  "dependencies": {
+    "gltf-loader-ts": "^0.3.1",
+    "three": "^0.160.0",
+    "three-stdlib": "^2.36.0"
+  }
+}

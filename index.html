@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>The Red Queen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: transparent;
+            user-select: none;
+            -webkit-app-region: no-drag;
+        }
+        
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        #controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            -webkit-app-region: no-drag;
+            z-index: 1000;
+            pointer-events: all;
+        }
+        
+        .drag-handle {
+            -webkit-app-region: drag;
+            cursor: move;
+            padding: 5px;
+            margin: -5px -5px 5px -5px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+        
+        .control-btn {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin: 2px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 11px;
+            -webkit-app-region: no-drag;
+        }
+        
+        .control-btn:hover {
+            background: #ff6666;
+        }
+        
+        #status {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #ff6666;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+        
+        #logs {
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            right: 10px;
+            max-height: 300px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            overflow-y: auto;
+            display: none;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            user-select: text;
+            -webkit-user-select: text;
+            cursor: text;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    
+    <div id="controls">
+        <div class="drag-handle" title="Drag to move window">🔴 The Red Queen</div>
+        <button class="control-btn" onclick="toggleClickThrough()">Toggle Click-Through</button>
+        <button class="control-btn" onclick="toggleAlwaysOnTop()">Toggle Always On Top</button>
+        <button class="control-btn" onclick="animateWave()">Wave</button>
+        <button class="control-btn" onclick="animateNod()">Nod</button>
+        <button class="control-btn" onclick="animateLook()">Look Around</button>
+        <button class="control-btn" onclick="stopAnimation()">Stop Animation</button>
+        <button class="control-btn" onclick="moveCameraUp()">Camera Up</button>
+        <button class="control-btn" onclick="moveCameraDown()">Camera Down</button>
+        <button class="control-btn" onclick="toggleLogs()">Show Logs</button>
+    </div>
+    
+    <div id="logs"></div>
+    <div id="status">Ready</div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
